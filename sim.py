@@ -21,8 +21,8 @@ pygame.init()
 
 
 # Grid size
-gridX = 10
-gridY = 10
+gridX = 100
+gridY = 100
 
 # Set the HEIGHT and WIDTH of the screen
 WINDOW_SIZE_X = 800
@@ -63,7 +63,7 @@ clock = pygame.time.Clock()
 # List of individuals
 individuals=[]
 retiredIndivduals=[]
-for i in xrange(10):
+for i in xrange(1000):
     individuals.append(Individual(random.randrange(1,1024),random.randrange(0,gridX),random.randrange(0,gridY)))
 
 
@@ -125,7 +125,6 @@ while not done:
 
 
     # Go ahead and update the screen with what we've drawn.
-    print "flip"
     pygame.display.flip()
 
     end_time = time.time()
