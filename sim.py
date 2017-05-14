@@ -25,7 +25,7 @@ gridX = 100
 gridY = 100
 
 # Set the HEIGHT and WIDTH of the screen
-WINDOW_SIZE_X = 800
+WINDOW_SIZE_X = 2000
 WINDOW_SIZE = [WINDOW_SIZE_X, WINDOW_SIZE_X]
 screen = pygame.display.set_mode(WINDOW_SIZE)
 
@@ -52,7 +52,7 @@ for row in range(gridX):
 
 
 # Set title of screen
-pygame.display.set_caption("Array Backed Grid")
+pygame.display.set_caption("Simulator")
 
 # Loop until the user clicks the close button.
 done = False
@@ -129,7 +129,7 @@ while not done:
 
     end_time = time.time()
     looptime = round(end_time - start_time,4)
-    if (tick%15==1 and tick != 0):
+    if (tick%150==1 and tick != 0):
         print "Slow down factor: X%s " % (looptime)
         print "alive: %s | Dead: %s"%(alive,dead)
 
