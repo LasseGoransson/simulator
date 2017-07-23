@@ -25,9 +25,10 @@ gridX = 100
 gridY = 100
 
 # Set the HEIGHT and WIDTH of the screen
-WINDOW_SIZE_X = 2000
+WINDOW_SIZE_X = 1000
 WINDOW_SIZE = [WINDOW_SIZE_X, WINDOW_SIZE_X]
 screen = pygame.display.set_mode(WINDOW_SIZE)
+
 
 # This sets the margin between each cell
 MARGIN = 0
@@ -72,6 +73,14 @@ for indvi in individuals:
 
 
 
+    # Add text to windows
+    pygame.font.init()
+
+    font = pygame.font.SysFont("monospace", 35)
+
+
+
+
 
 # -------- Main Program Loop -----------
 while not done:
@@ -90,7 +99,10 @@ while not done:
     alive=0
     dead=0
     # Set the screen background
-    screen.fill(BLACK)
+    #screen.fill(BLACK)
+
+
+
 
     # Draw the grid
     for row in range(gridX):
@@ -103,6 +115,7 @@ while not done:
                           (MARGIN + HEIGHT) * row + MARGIN,
                           WIDTH,
                           HEIGHT])
+
 
     # Limit to 120 frames per second
     clock.tick(FPS)
@@ -132,6 +145,10 @@ while not done:
     if (tick%150==1 and tick != 0):
         print "Slow down factor: X%s " % (looptime)
         print "alive: %s | Dead: %s"%(alive,dead)
+
+    label = font.render("Alive: "+str(alive)+" | Dead: "+str(dead), True, WHITE, GREEN)
+    screen.blit(label, [0,0])
+
 
 # Be IDLE friendly. If you forget this line, the program will 'hang'
 # on exit.
